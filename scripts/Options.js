@@ -428,4 +428,3 @@ Heron.options.bookmarks =
         
     ];
 
-
