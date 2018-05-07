@@ -37,7 +37,7 @@
 <body>
 
 <?php   
-$conn = pg_connect("host=172.31.9.36 port=5432 dbname=solanohcp user=postgres password=Msimonpass!");
+$conn = pg_connect("host=l72.31.27.214 port=5432 dbname=solanohcp user=postgres password=Msimonpass!");
 
 # TODO: replace "SELECT *" with the columns you want, and don't select from 
 # parcels, select from whatever table you're actually interested in 

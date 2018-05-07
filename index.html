@@ -86,7 +86,7 @@
 
 
     <script type="text/javascript" src="scripts/Options.js"></script>
-    <script type="text/javascript" src="scripts/Layers.js"></script>
+    <script type="text/javascript" src="scripts/Layers3.js"></script>
     <script type="text/javascript" src="scripts/multisearch.js"></script>
     <script type="text/javascript" src="scripts/Config.js"></script>
     <script type="text/javascript" src="scripts/ole.min.js"></script>
@@ -358,7 +358,7 @@ center: '-13573952.809878, 4617592.273233',
     var parcels = new OpenLayers.Layer.WMS(
             "Parcels 2016",
             '/geoserver/wms?',
-            {layers: "solanohcp:parcels", transparent: true, format: 'image/png', tiled: true},
+            {layers: "development:parcels", transparent: true, format: 'image/png', tiled: true},
             {singleTile: false, opacity: 1.0, isBaseLayer: true, visibility: true, noLegend: false, featureInfoFormat:
             'application/vnd.ogc.gml', maxResolution: 14}
             );

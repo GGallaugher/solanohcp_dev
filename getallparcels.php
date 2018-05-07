@@ -39,7 +39,7 @@
 
 
 <?php
-$conn = pg_connect("host=172.31.9.36 port=5432 dbname=solanohcp user=postgres password=Msimonpass!");
+$conn = pg_connect("host=172.31.27.214 port=5432 dbname=solanohcp user=postgres password=Msimonpass!");
 
 # Construct the query.  Input coordinates are SRID 900913, database
 # coordinatees are 4326 (WGS_1984). This interprets input coordinates as

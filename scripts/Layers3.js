@@ -109,37 +109,6 @@ Heron.options.map.layers = [
 	
 	new OpenLayers.Layer("None", {isBaseLayer: true, numZoomLevels: 30}),	
 	
-    /*
-     * ==================================
-     *            BaseLayers
-     * ==================================
-     */
-	new OpenLayers.Layer.Google(
-			"Google Satellite",
-			{type: google.maps.MapTypeId.HYBRID, visibility: true},
-			{singleTile: false, buffer: 0, isBaseLayer: true, }
-	), 
-	
-	gHyb = 	new OpenLayers.Layer.Google(
-			"Google Terrain",
-			{type: google.maps.MapTypeId.TERRAIN, visibility: false},
-			{singleTile: false, buffer: 0, isBaseLayer: true}
-	),	
-
-	new OpenLayers.Layer.Google(
-			"Google Streets", // the default
-			{type: google.maps.MapTypeId.ROADMAP, visibility: false},
-			{singleTile: false, buffer: 0, isBaseLayer: true}
-	),
-
-
-
-
-	
-		
-	
-	new OpenLayers.Layer("None", {isBaseLayer: true, numZoomLevels: 30}),	
-	
 	
 	
     /*
@@ -155,11 +124,11 @@ Heron.options.map.layers = [
 		{singleTile: false, opacity: 1, isBaseLayer: false, maxExtent: new OpenLayers.Bounds(-13626283.1384,4584305.78997, -13535992.5479,4655852.27853), visibility: true, noLegend: false, }
 	),
 		new OpenLayers.Layer.WMS(
-	//	"Riparian",
-	//	'/geoserver/wms?',
-	//	{layers: "development:riparian", transparent: true, format: 'image/png', tiled: false},
-	//	{singleTile: false, opacity: 1, isBaseLayer: false, maxExtent: new OpenLayers.Bounds(-13626283.1384,4584305.78997, -13535992.5479,4655852.27853), visibility: true, noLegend: false, }
-	//),
+		"Riparian",
+		'/geoserver/wms?',
+		{layers: "development:riparian", transparent: true, format: 'image/png', tiled: false},
+		{singleTile: false, opacity: 1, isBaseLayer: false, maxExtent: new OpenLayers.Bounds(-13626283.1384,4584305.78997, -13535992.5479,4655852.27853), visibility: true, noLegend: false, }
+	),
 		new OpenLayers.Layer.WMS(
 		"County Divide",
 		'/geoserver/wms?',
@@ -1143,9 +1112,10 @@ new OpenLayers.Layer.WMS(
      //       }
       //      }
 	parcels = new OpenLayers.Layer.Vector("Parcel Search Results", {noLegend: true, featureInfoFormat: 'application/vnd.ogc.gml'}),
-//markers = new OpenLayers.Layer.Vector("Search", {metadata: {legend: {hideInLegend: true}),
+	markers = new OpenLayers.Layer.Vector("Search", {metadata: {legend: {hideInLegend: true}}})
     //Heron.App.map.addLayer(markers);
-// ];
+ ];
+ 
 // Layers are organized in the application using the Layer Tree below:
 var newLayertree = [
 
@@ -1154,10 +1124,18 @@ var newLayertree = [
 			[	
 				{nodeType: 'gx_layer', layer: 'Parcels'},	
 				{nodeType: 'gx_layer', layer: 'Plan Area'},	
-										
+			//	{nodeType: 'gx_layer', layer: 'Covered Activity Zones'},	
+			//	{nodeType: 'gx_layer', layer: 'City Plan Participants'},
+			//	{nodeType: 'gx_layer', layer: 'Natural Communities'},
+			//	{nodeType: 'gx_layer', layer: 'Vegetation and Cover Types'},				
+			//	{nodeType: 'gx_layer', layer: 'Key Corridors'},		
+			//	{nodeType: 'gx_layer', layer: 'Species - Generalized in Plan Area'},
+				
+			//	{nodeType: 'gx_layer', layer: 'Suisun Marsh Conservation Areas'},									
 				{nodeType: 'gx_layer', layer: 'Travis Air Force Base - Not Part of the HCP'},	
 				{nodeType: 'gx_layer', layer: 'Travis Reserve Boundary'},	
-		
+		//		{nodeType: 'gx_layer', layer: 'Travis AFB Airport Land Use Planning Wildlife Hazard Areas'},
+					
 							
 				
 						
@@ -1167,6 +1145,87 @@ var newLayertree = [
 			
 			]
 	},
+//	{
+//		text:'Covered Species', nodeType: 'hr_cascader', expanded: false, children:
+//[
+//				{nodeType: 'gx_layer', layer: 'Alkali Milk-Vetch'},
+//{nodeType: 'gx_layer', layer: 'Boggs Lake Hedge-Hyssop'},
+//{nodeType: 'gx_layer', layer: 'Burrowing Owl'},
+//{nodeType: 'gx_layer', layer: 'California Black Rail'},
+//{nodeType: 'gx_layer', layer: 'California Clapper Rail'},
+//{nodeType: 'gx_layer', layer: 'California Tiger Salamander'},
+//{nodeType: 'gx_layer', layer: 'California Red-Legged Frog'},
+//{nodeType: 'gx_layer', layer: 'Callippe Silverspot Butterfly'},
+//{nodeType: 'gx_layer', layer: 'Colusa Grass'},
+//{nodeType: 'gx_layer', layer: 'Conservancy Fairy Shrimp'},
+//{nodeType: 'gx_layer', layer: 'Contra Costa Goldfields'},
+//{nodeType: 'gx_layer', layer: 'Delta Green Ground Beetle'},
+//{nodeType: 'gx_layer', layer: 'Delta Smelt'},
+//{nodeType: 'gx_layer', layer: 'Ferris\'s Milk Vetch'},
+//{nodeType: 'gx_layer', layer: 'Foothill Yellow-legged Frog'},
+//{nodeType: 'gx_layer', layer: 'Giant Garter Snake'},
+//{nodeType: 'gx_layer', layer: 'Legenere'},
+//{nodeType: 'gx_layer', layer: 'Longfin Smelt'},
+//{nodeType: 'gx_layer', layer: 'Mason\'s Lilaeopsis'},
+//{nodeType: 'gx_layer', layer: 'Sacramento Splittail'},
+//{nodeType: 'gx_layer', layer: 'Salt Marsh Harvest Mouse'},
+//{nodeType: 'gx_layer', layer: 'San Joaquin Valley Orcutt Grass'},
+//{nodeType: 'gx_layer', layer: 'Soft Bird\'s Beak'},
+//{nodeType: 'gx_layer', layer: 'Solano Grass'},
+//{nodeType: 'gx_layer', layer: 'Suisun Thistle'},
+//{nodeType: 'gx_layer', layer: 'Swainson\'s Hawk'},
+//{nodeType: 'gx_layer', layer: 'Tricolored Blackbird'},
+//{nodeType: 'gx_layer', layer: 'Valley Elderberry Longhorn Beetle'},
+//{nodeType: 'gx_layer', layer: 'Vernal Pool Fairy Shrimp'},
+//{nodeType: 'gx_layer', layer: 'Vernal Pool Smallscale'},
+//{nodeType: 'gx_layer', layer: 'Vernal Pool Tadpool Shrimp'},
+
+		
+//			]
+//	},
+//	{
+//		text:'Special Management Species', nodeType: 'hr_cascader',  expanded: false, children:
+//			[
+//{nodeType: 'gx_layer', layer: 'Baker\’s Navarretia'},
+//{nodeType: 'gx_layer', layer: 'Bearded Popcorn-Flower'},
+//{nodeType: 'gx_layer', layer: 'Brittlescale'},
+//{nodeType: 'gx_layer', layer: 'Carquinez Goldenbush'},
+//{nodeType: 'gx_layer', layer: 'Delta Mudwort'},
+//{nodeType: 'gx_layer', layer: 'Delta Tule Pea'},
+//{nodeType: 'gx_layer', layer: 'Dwarf Downingia'},
+//{nodeType: 'gx_layer', layer: 'Ferris\'s Goldfields'},
+//{nodeType: 'gx_layer', layer: 'Fragrant Fritillary'},
+//{nodeType: 'gx_layer', layer: 'Grasshopper Sparrow'},
+//{nodeType: 'gx_layer', layer: 'Heartscale'},
+//{nodeType: 'gx_layer', layer: 'Heckard\'s Pepper-Grass'},
+//{nodeType: 'gx_layer', layer: 'Hispid Bird\’s-Beak'},
+//{nodeType: 'gx_layer', layer: 'Hogwallow Starfish'},
+//{nodeType: 'gx_layer', layer: 'Loggerhead Shrike'},
+//{nodeType: 'gx_layer', layer: 'Midvalley Fairy Shrimp'},
+//{nodeType: 'gx_layer', layer: 'Northern Harrier'},
+//{nodeType: 'gx_layer', layer: 'Pappose Tarplant'},
+//{nodeType: 'gx_layer', layer: 'Recurved Larkspur'},
+//{nodeType: 'gx_layer', layer: 'Ricksecker\'s Water Scavenger Beetle'},
+//{nodeType: 'gx_layer', layer: 'Saline Clover'},
+//{nodeType: 'gx_layer', layer: 'Salt Marsh Common Yellowthroat'},
+//{nodeType: 'gx_layer', layer: 'San Joaqin Spearscale'},
+//{nodeType: 'gx_layer', layer: 'San Pablo Song Sparrow'},
+//{nodeType: 'gx_layer', layer: 'Short-Eared Owl'},
+//{nodeType: 'gx_layer', layer: 'Song Sparrow - \"Modesto\" Population'},
+//{nodeType: 'gx_layer', layer: 'Suisun Marsh Aster'},
+//{nodeType: 'gx_layer', layer: 'Suisun Shrew'},
+//{nodeType: 'gx_layer', layer: 'Suisun Song Sparrow'},
+//{nodeType: 'gx_layer', layer: 'Valley Needlegrass Grassland'},
+//{nodeType: 'gx_layer', layer: 'Western Pond Turtle'},
+//{nodeType: 'gx_layer', layer: 'Woolly Rose-Mallow'},
+//{nodeType: 'gx_layer', layer: 'Yellow-Breasted Chat'},
+//{nodeType: 'gx_layer', layer: 'Yellow-Headed Blackbird Breeding Range'},
+
+
+
+		
+//			]
+//	},
 	
 	{
 		text:'Base Layers', nodeType: "gx_baselayercontainer", expanded: true

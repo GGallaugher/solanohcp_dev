@@ -36,7 +36,7 @@
 
 
 <?php
-$conn = pg_connect("host=172.31.9.36 port=5432 dbname=solanohcp user=postgres password=Msimonpass!");
+$conn = pg_connect("host=172.31.27.214 port=5432 dbname=solanohcp user=postgres password=Msimonpass!");
 $sql= "
     SELECT *
     FROM public.parcelsfinal
