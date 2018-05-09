@@ -127,7 +127,7 @@ Heron.options.map.layers = [
 		"Riparian",
 		'/geoserver/wms?',
 		{layers: "development:riparian", transparent: true, format: 'image/png', tiled: false},
-		{singleTile: false, opacity: 1, isBaseLayer: false, maxExtent: new OpenLayers.Bounds(-13626283.1384,4584305.78997, -13535992.5479,4655852.27853), visibility: true, noLegend: false, }
+		{singleTile: false, opacity: 1, isBaseLayer: false, maxExtent: new OpenLayers.Bounds(-13626283.1384,4584305.78997, -13535992.5479,4655852.27853), visibility: false, noLegend: false, }
 	),
 		new OpenLayers.Layer.WMS(
 		"County Divide",
